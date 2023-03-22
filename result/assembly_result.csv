@@ -1,4 +1,4 @@
 case_id,contig_count,N50,GC_percent
-sars_cov_2_k21,0,0,0
-sars_cov_2_k77,0,0,0
-sars_cov_2_k127,0,0,0
+sars_cov_2_k23,8,7993,38.52
+sars_cov_2_k79,4,29988,38.43
+sars_cov_2_k125,1,29851,37.98

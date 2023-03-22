@@ -1,0 +1,5 @@
+/home/exercise03/exercise03/data/NC_045512.2.fasta /home/exercise03/exercise03/result/sars_cov_2_k125.fasta
+NUCMER
+>NC_045512.2 NODE_1_length_29851_cov_411.172273 29903 29851
+39 29854 29851 36 19 19 0
+0
