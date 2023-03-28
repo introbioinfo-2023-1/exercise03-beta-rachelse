@@ -49,6 +49,46 @@
       "comparison": "exact",
       "timeout": 10,
       "points": null
+    },
+    {
+      "name": "02 result",
+      "setup": "",
+      "run": "sed -n -e 200p -e 400p -e 600p -e 800p result/sars_cov_2_k23.fasta && sed -n -e 150p -e 300p -e 450p -e 600p result/sars_cov_2_k79.fasta && sed -n -e 120p -e 240p -e 360p -e 480p result/sars_cov_2_k125.fasta",
+      "input": "",
+      "output": "CAACATTATCAACAATGCAAGAGATGGTTGTGTTCCCTTGAACATAATACCTCTTACAAC\r\nTTTTACGTTTACTCTCGTGTTAAAAATCTGAATTCTTCTAGAGTTCCTGATCTTCTGGTC\r\nCACATCACTACGCAGTGTCTGGGAACGAGTTTGTCTTGTTTTTATACGAAGATATTTCCT\r\nCCAGCGTGGTGGTAGTTATACTAATGACAAAGCTTGCCCATTGATTGCTGCAGTCATAAC\r\nAATTCACAGAATGCTGTAGCCTCAAAGATTTTGGGACTACCAACTCAAACTGTTGATTCA\r\nTTGTAGGCTTGATGTGGCTCAGCTACTTCATTGCTTCTTTCAGACTGTTTGCGCGTACGC\r\nGTCACTACTAAAAATCCAAAAAATTAGCTAGGCATGGTGGCAGCTGGTGTAGTCCCAGTG\r\nCCAGTTTGCCCTGGAGCGATTTGTCTGACTTCATCACCTCTAATTACAAATGAATCTGCA\r\nTAAATTGCGGACATACTTATCGGCAATTTTGTTACCATCAGTAGATAAAAGTGCATTAAC\r\nACGTTCCATATCAAAGCAATGTTGTGACTTTTTGCTACCTGCGCATTAATATGACGCGCA\r\nATTTGGTTGCATTCATTTGGTGACGCAACTGGATAGACAGATCGAATTCTACCCATAAAG",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "03 result",
+      "setup": "",
+      "run": "sed -n -e 25p -e 50p -e 75p -e 100p result/sars_cov_2_k23.mums && sed -n -e 10p -e 20p -e 30p -e 40p result/sars_cov_2_k79.mums && sed -n -e 5p -e 10p -e 15p -e 20p result/sars_cov_2_k125.mums && sed -n -e 5p -e 10p -e 15p -e 20p result/sars_cov_2_k125.snps && cat  result/clade_name.txt && test -f result/sars_cov_2_k23.png && echo \"sars_cov_2_k23.png exist\" && test -f result/sars_cov_2_k79.png && echo \"sars_cov_2_k79.png exist\" && test -f result/sars_cov_2_k125.png && echo \"sars_cov_2_k125.png exist\"",
+      "input": "",
+      "output": "> NODE_5_length_1615_cov_946.600503\r\n> NODE_24_length_319_cov_3.344595\r\n> NODE_47_length_43_cov_1.150000\r\n> NODE_65_length_28_cov_5.800000\r\n  NC_045512.2      6138      6237      1390\r\n  NC_045512.2     28294     28393       596\r\n> NODE_9_length_392_cov_1.092652\r\n> NODE_19_length_80_cov_1344.000000\r\n> NODE_4_length_126_cov_57.000000\r\n241     C       T       29649   203     203     0       0       ATCTAGGTTTCGTCCGGGTGT   ATCTAGGTTTTGTCCGGGTGT   1       -1      NC_045512.2     NODE_1_length_29851_cov_411.172273\r\n3037    C       T       26853   514     2999    0       0       ATTGTTCTTTCTACCCTCCAG   ATTGTTCTTTTTACCCTCCAG   1       -1      NC_045512.2     NODE_1_length_29851_cov_411.172273\r\n11824   C       T       18066   2170    11786   0       0       AACCTTGTATCAAAGTAGCCA   AACCTTGTATTAAAGTAGCCA   1       -1      NC_045512.2     NODE_1_length_29851_cov_411.172273\r\n25563   G       T       4327    313     4327    0       0       CTGTTTTTCAGAGCGCTTCCA   CTGTTTTTCATAGCGCTTCCA   1       -1      NC_045512.2     NODE_1_length_29851_cov_411.172273\r\n20C\r\nsars_cov_2_k23.png exist\r\nsars_cov_2_k79.png exist\r\nsars_cov_2_k125.png exist",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "04 result",
+      "setup": "",
+      "run": "cat  result/assembly_result.csv",
+      "input": "",
+      "output": "case_id,contig_count,N50,GC_percent\r\nsars_cov_2_k23,8,7993,38.52\r\nsars_cov_2_k79,4,29988,38.43\r\nsars_cov_2_k125,1,29851,37.98",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "05 result",
+      "setup": "",
+      "run": "cat  result/read_mapping.snps && cat  result/assembly_align.snps && cat  result/shared_snp.txt && cat  result/unique_snp.txt",
+      "input": "",
+      "output": "241 T\r\n1059 T\r\n1264 T\r\n1682 G\r\n2523 T\r\n3037 T\r\n5155 A\r\n6137 G\r\n7528 T\r\n7814 C\r\n11824 T\r\n13994 T\r\n14408 T\r\n15372 T\r\n19552 G\r\n23403 G\r\n25563 T\r\n25876 G\r\n28293 G\r\n28890 T\r\n241 T\r\n1059 T\r\n1264 T\r\n1682 G\r\n2523 T\r\n3037 T\r\n5155 A\r\n6137 G\r\n7528 T\r\n7814 C\r\n11824 T\r\n13994 T\r\n14408 T\r\n15372 T\r\n23403 G\r\n25563 T\r\n25876 G\r\n28293 G\r\n28890 T\r\n241 T\r\n1059 T\r\n1264 T\r\n1682 G\r\n2523 T\r\n3037 T\r\n5155 A\r\n6137 G\r\n7528 T\r\n7814 C\r\n11824 T\r\n13994 T\r\n14408 T\r\n15372 T\r\n23403 G\r\n25563 T\r\n25876 G\r\n28293 G\r\n28890 T\r\n19552 G",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
     }
   ]
 }
