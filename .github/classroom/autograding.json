@@ -1,0 +1,44 @@
+{
+  "tests": [
+    {
+      "name": "01 command",
+      "setup": "",
+      "run": "grep -q -P '(?=.*wget)(?=.*-O)(?=.*NC_045512.2.fasta)(?=.*eutils.ncbi.nlm.nih.gov)' command/command01.sh  && grep -q -P '(?=.*wget)(?=.*-O)(?=.*SRR13668359_1.fastq.gz)(?=.*ftp.sra.ebi.ac.uk)' command/command01.sh && grep -q -P '(?=.*wget)(?=.*-O)(?=.*SRR13668359_2.fastq.gz)(?=.*ftp.sra.ebi.ac.uk)' command/command01.sh && grep -q -P '(?=.*wget)(?=.*-O)(?=.*sars_cov_2.genes.gtf.gz)(?=.*ftp.ensemblgenomes.org)(?=.*ASM985889v3)' command/command01.sh && grep -q -P '(?=.*gunzip)(?=.*sars_cov_2.genes)' command/command01.sh && echo \"correct\"",
+      "input": "",
+      "output": "correct",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "02 command",
+      "setup": "",
+      "run": "grep -q -P '(?=.*spades.py)(?=.*--only-assembler)(?=.*-1)(?=.*-2)(?=.*-o)(?=.*sars_cov_2_k)' command/command02.sh  && grep -q -P '(?=.*cp)(?=.*sars_cov_2_k)(?=.*scaffolds.fasta)(?=.*result/sars_cov_2_k)' command/command02.sh && echo \"correct\"",
+      "input": "",
+      "output": "correct",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "03 command",
+      "setup": "",
+      "run": "grep -q -P '(?=.*mummer)(?=.*-F)(?=.*data/NC_045512.2.fasta)(?=.*result/sars_cov_2_k)(?=.*.fasta)(?=.*.mums)' command/command03.sh  && grep -q -P '(?=.*mummerplot)(?=.*--png)(?=.*-p)(?=.*result/sars_cov_2_k)(?=.*-R)(?=.*data/NC_045512.2.fasta)(?=.*-Q)(?=.*result/sars_cov_2_k)(?=.*.mums)' command/command03.sh  && grep -q -P '(?=.*nucmer)(?=.*--maxmatch)(?=.*-p)(?=.*data/NC_045512.2.fasta)(?=.*result/sars_cov_2_k125.fasta)(?=.*sars_cov_2_k125)' command/command03.sh && grep -q -P '(?=.*delta-filter)(?=.*-r)(?=.*-q)(?=.*sars_cov_2_k125.delta)(?=.*sars_cov_2_k125.filter)' command/command03.sh && grep -q -P '(?=.*show-snps)(?=.*-r)(?=.*-I)(?=.*-T)(?=.*-x 10)(?=.*sars_cov_2_k125.filter)(?=.*result/sars_cov_2_k125.snps)' command/command03.sh  && grep -q -P '(?=.*awk)(?=.*result/sars_cov_2_k125.snps)(?=.*result/assembly_align.snps)' command/command03.sh  && grep -q -P '(?=.*ls)(?=.*data/clade)' command/command03.sh && grep -q -P '(?=.*join.awk)(?=.*awk)(?=.*data/clade)(?=.*sars_cov_2_k125)(?=.*data/clade)' command/command03.sh && grep -q -P '(?=.*wc)(?=.*-l)(?=.*data/clade/)' command/command03.sh && grep -q -P '(?=.*sort -k1n)(?=.*head -n1)(?=.*tr -d)(?=.*clade_name)' command/command03.sh && echo \"correct\"",
+      "input": "",
+      "output": "correct",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "04 command",
+      "setup": "",
+      "run": "grep -q -P '(?=.*quast.py)(?=.*result/sars_cov_2_k)' command/command04.sh  && grep -q -P '(?=.*-r)(?=.*data/NC_045512.2.fasta)' command/command04.sh  && grep -q -P '(?=.*-g)(?=.*data/sars_cov_2.genes.gtf)' command/command04.sh  && grep -q -P '(?=.*-o)(?=.*sars_cov_2_k)(?=.*/quast)' command/command04.sh  && grep -q -P '(?=.*sars_cov_2_k)(?=.*>)(?=.*.result/assembly_result.csv)' command/command04.sh  && grep -q -P '(?=.*# contigs)(?=.*N50)(?=.*GC \\(%\\))' command/command04.sh  && echo \"correct\"",
+      "input": "",
+      "output": "correct",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": null
+    }
+  ]
+}
