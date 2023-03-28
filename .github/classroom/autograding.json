@@ -39,6 +39,16 @@
       "comparison": "exact",
       "timeout": 10,
       "points": null
+    },
+    {
+      "name": "05 command",
+      "setup": "",
+      "run": "grep -q -P '(?=.*bwa)(?=.*index)(?=.*NC_045512.2.fasta)' command/command05.sh  && grep -q -P '(?=.*bwa)(?=.*mem)(?=.*-t 16)(?=.*NC_045512.2.fasta)(?=.*SRR13668359_1.fastq.gz)(?=.*SRR13668359_2.fastq.gz)(?=.*SRR13668359_mapping.sam)' command/command05.sh  && grep -q -P '(?=.*samtools)(?=.*view)(?=.*-Sb)(?=.*SRR13668359_mapping.sam)(?=.*SRR13668359_mapping.bam)' command/command05.sh  && grep -q -P '(?=.*samtools)(?=.*sort)(?=.*SRR13668359_mapping.bam)(?=.*SRR13668359_mapping_sorted.bam)' command/command05.sh  && grep -q -P '(?=.*bcftools)(?=.*mpileup)(?=.*-f)(?=.*NC_045512.2.fasta)(?=.*SRR13668359_mapping_sorted.bam)' command/command05.sh  && grep -q -P '(?=.*bcftools)(?=.*call)(?=.*-mv)(?=.*-Ob)(?=.*SRR13668359_mapping.bcf)' command/command05.sh  && grep -q -P '(?=.*bcftools)(?=.*convert)(?=.*SRR13668359_mapping.bcf)(?=.*-O*v)(?=.*SRR13668359_mapping.vcf)' command/command05.sh  && grep -q -P '(?=.*awk|grep)(?=.*#)(?=.*SRR13668359_mapping_snps.vcf)(?=.*read_mapping.snps)' command/command05.sh  && grep -q -P '(?=.*awk|grep)(?=.*NR==FNR)(?=.*shared_snp.txt)(?=.*unique_snp.txt)(?=.*assembly_align.snps)(?=.*read_mapping.snps)' command/command05.sh  && echo \"correct\"",
+      "input": "",
+      "output": "correct",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": null
     }
   ]
 }
